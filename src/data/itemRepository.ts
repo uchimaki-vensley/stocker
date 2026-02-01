@@ -1,20 +1,5 @@
-import * as SQLite from 'expo-sqlite';
-
-export type ItemRecord = {
-  id: number;
-  name: string;
-  category: string;
-  quantity: number;
-  unit: string;
-  lastPurchasedAt: string;
-  cycleDays: number;
-  notes: string | null;
-  emoji: string | null;
-  createdAt: string;
-  updatedAt: string;
-};
-
-const db = SQLite.openDatabaseSync('stocker.db');
+import { ItemRecord } from '../domain/models/item';
+import { db } from './sqlite';
 
 const nowIso = () => new Date().toISOString();
 
